@@ -109,7 +109,7 @@ Make arc42 Toolkit global!
 - Test skill changes with at least one AI tool (Claude Code, Copilot, or Cursor)
 - Ensure markdown formatting is correct
 - Check that examples are clear and accurate
-- If you change anything under `skills/`, run `python scripts/sync-apm-skills.py` and then `python scripts/sync-apm-skills.py --check`
+- If you change anything under `skills/`, verify APM installation from the package root still discovers all skills.
 
 ---
 

@@ -48,7 +48,7 @@ arc42 is the proven, open-source template for software architecture documentatio
 apm install MSiccDev/arc42-toolkit --target opencode
 ```
 
-For other APM-supported agents, replace `opencode` with your target runtime. This installs all 14 skills from the `.apm/skills/` package mirror in one command.
+For other APM-supported agents, replace `opencode` with your target runtime. This installs all 14 skills from the canonical `skills/` directory in one command.
 
 **Claude Code**
 
@@ -160,15 +160,12 @@ arc42-toolkit/
 ├── templates/
 │   └── arc42-lint.yml                 # GitHub Actions workflow template (copy to your project)
 │
-├── .apm/
-│   └── skills/                        # APM package mirror for one-command installs
-│
 └── .agents/ -> skills/                # Symlink for agent-discovery compatibility
 ```
 
 Generated documentation goes in your project's `docs/` directory. Architecture diagrams are stored as `.puml` files in `docs/diagrams/`.
 
-When changing skills, run `python scripts/sync-apm-skills.py` to refresh the APM package mirror, and `python scripts/sync-apm-skills.py --check` before submitting changes.
+When changing skills, edit the canonical files under `skills/`; APM installs from that directory directly.
 
 ---
 
