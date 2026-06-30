@@ -14,6 +14,8 @@ This section captures the boundaries of architectural freedom — decisions alre
 
 ---
 
+Official reference: [arc42 Section 2](https://docs.arc42.org/section-2/).
+
 ## Step 1 — Ask These Questions First
 
 **Do not generate any documentation yet.** Ask all questions below and wait for the answers.
@@ -46,6 +48,8 @@ Once all answers are in, produce Section 2. Group by category, include only cate
 
 ```markdown
 # 2. Constraints
+
+> References: [arc42 Section 2](https://docs.arc42.org/section-2/).
 
 ## Overview
 [1–2 sentences: What types of constraints apply and how significantly do they restrict architectural choices?]

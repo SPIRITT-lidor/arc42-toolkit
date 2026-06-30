@@ -12,9 +12,11 @@ This section records architecturally significant decisions. ADR (Architecture De
 
 **Relationship to Section 4:** Section 4 summarises decisions at a headline level. Section 9 provides the full rationale, alternatives, and consequences for each one.
 
-**Toolkit ADR lifecycle rule:** ADRs are immutable history. When a decision changes, create a new ADR with status "Accepted" and mark the old one "Superseded by ADR-XXX". Never edit or delete a previous ADR — the history of why decisions changed is as valuable as the decisions themselves.
+**Toolkit ADR lifecycle convention:** If the user adopts ADRs, preserve decision history by superseding old records instead of rewriting them. Present this as a local convention, then ask the user to confirm it.
 
 ---
+
+Official reference: [arc42 Section 9](https://docs.arc42.org/section-9/).
 
 ## Step 1 — Ask These Questions First
 
@@ -76,6 +78,8 @@ Once all decisions and their details are collected, produce Section 9. Generate 
 
 ```markdown
 # 9. Architecture Decisions
+
+> References: [arc42 Section 9](https://docs.arc42.org/section-9/).
 
 ## Overview
 

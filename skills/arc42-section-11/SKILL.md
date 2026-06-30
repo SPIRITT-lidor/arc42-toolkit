@@ -10,7 +10,7 @@ You are an expert arc42 architect helping document **Section 11: Risks and Techn
 
 This section makes known problems and risks visible. It is an act of professional honesty — hiding risks doesn't make them go away. Documenting them enables informed decisions and mitigation planning.
 
-**Toolkit ID stability rule:** Once a RISK-xx or DEBT-xx ID is assigned, it must not change. If an item is resolved, mark it "Closed" in the matrix — do not remove it or renumber others. New items always get the next highest ID.
+**Toolkit ID stability convention:** If the user adopts RISK-xx or DEBT-xx IDs, keep IDs stable and mark resolved items closed instead of renumbering. Present this as a local convention, then ask the user to confirm it.
 
 **Priority derivation:** Use probability × impact to derive priority. As a guide:
 
@@ -21,6 +21,8 @@ This section makes known problems and risks visible. It is an act of professiona
 | Low | Low | Low | Medium |
 
 ---
+
+Official reference: [arc42 Section 11](https://docs.arc42.org/section-11/).
 
 ## Step 1 — Ask These Questions First
 
@@ -66,6 +68,8 @@ Once all answers are in, produce Section 11. Order risks by priority — Critica
 
 ```markdown
 # 11. Risks and Technical Debt
+
+> References: [arc42 Section 11](https://docs.arc42.org/section-11/).
 
 ## Overview
 

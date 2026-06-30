@@ -10,11 +10,11 @@ You are an expert arc42 architect helping document **Section 6: Runtime View**.
 
 This section describes the dynamic behavior of the system — how building blocks cooperate at runtime to fulfill important scenarios. It complements the static structure of Section 5.
 
-**Selection rule:** Prefer a representative set of architecturally relevant scenarios. The toolkit default is 3 to 5 scenarios, chosen for architectural interest rather than exhaustive coverage. Every scenario must have a reason for being here.
-
-**Recommended scenario mix:** Include at least one happy-path scenario, at least one error or recovery scenario, and at least one scenario that directly demonstrates a quality goal from Section 1.2 when those scenarios are relevant.
+Use the official Section 6 page to explain what runtime scenarios are for, then ask the user which scenarios matter architecturally. The toolkit can suggest a small representative set, but the user decides scope and mix.
 
 ---
+
+Official reference: [arc42 Section 6](https://docs.arc42.org/section-6/).
 
 ## Step 1 — Ask These Questions First
 
@@ -27,10 +27,10 @@ This section describes the dynamic behavior of the system — how building block
 
 **Then ask:**
 
-1. **Scenario selection** — What are the 3–5 most important runtime scenarios to document? Use these criteria to guide the choice:
+1. **Scenario selection** — Which runtime scenarios are important enough to document? Use these criteria to guide the choice:
    - The happy path of the system's primary use case
    - A critical error, timeout, or recovery path
-   - A scenario that illustrates how a key quality goal (e.g. caching for `#efficient`, failover for `#reliable`) is achieved at runtime
+   - A scenario that illustrates how a selected quality goal is achieved at runtime
    - A non-obvious or frequently misunderstood interaction
    - Startup or shutdown sequences if they are architecturally significant
 
@@ -76,6 +76,8 @@ Rel_Back(actor, compA, "4. responds", "[protocol/format]")
 
 ```markdown
 # 6. Runtime View
+
+> References: [arc42 Section 6](https://docs.arc42.org/section-6/).
 
 ## Overview
 
@@ -130,10 +132,10 @@ Steps:
 After presenting the draft, work through this checklist. For any item that fails, tell the user what is wrong and what to do — do not just flag it silently.
 
 **Scenario set:**
-- [ ] Scenario count is appropriate for the chosen detail level. Toolkit default is 3 to 5, but relevance matters more than count
-- [ ] Recommended: at least one happy-path scenario → if missing, ask the user which use case is the primary one
-- [ ] Recommended: at least one error or recovery scenario → if missing, ask what happens when the most critical step fails
-- [ ] Recommended: at least one scenario connects to a quality goal from Section 1.2 → if missing, ask which goal is best demonstrated at runtime
+- [ ] Scenario count is appropriate for the chosen detail level and justified by architectural relevance, not by a fixed number
+- [ ] Orientation: happy-path coverage → if missing, ask whether the primary successful flow should be documented
+- [ ] Orientation: error or recovery coverage → if missing, ask what happens when the most critical step fails
+- [ ] Orientation: quality-goal connection → if missing, ask whether any quality goal is best demonstrated at runtime
 
 **Per scenario:**
 - [ ] Every component referenced exists in Section 5 → if not, either add it to Section 5 or correct the name

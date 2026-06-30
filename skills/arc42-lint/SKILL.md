@@ -73,7 +73,7 @@ Read the relevant documentation sections. Apply each rule in order. The phrases 
 3. Any component name absent from Section 7 is an error
 
 **Rule 3 — Section 1 ↔ Section 10 Quality Tag Coverage**
-1. Read Section 1.2: collect every Q42 tag (`#reliable`, `#efficient`, `#secure`, etc.) from the Quality Goal column
+1. Read Section 1.2: collect every selected Q42 reference, Q42 tag, or local quality label from the Quality Goal column
 2. Read Section 10: collect the Q42 tag from every quality scenario's "Quality property" row
 3. Any tag used in Section 10 that does not appear in Section 1.2 is an error
 
@@ -107,7 +107,7 @@ Present results in this format:
 |------|----------|--------|---------|
 | 1 | Section 3 ↔ Section 5  IF-xx | PASS / FAIL | [e.g. "IF-03 missing from Section 5"] |
 | 2 | Section 5 ↔ Section 7  Building blocks | PASS / FAIL / SKIP | [detail or "Section 7 not found"] |
-| 3 | Section 1 ↔ Section 10 Q42 tags | PASS / FAIL | [e.g. "#usable used in QS-04 but absent from Section 1.2"] |
+| 3 | Section 1 ↔ Section 10 quality references | PASS / FAIL | [e.g. "quality label used in QS-04 but absent from Section 1.2"] |
 | 4 | Section 9 ↔ Section 11 RISK-xx | PASS / FAIL | [e.g. "RISK-02 in ADR-003 missing from Section 11"] |
 | 5 | Section 10 ↔ Section 11 Aspirational | PASS / FAIL / SKIP | [detail or "no aspirational scenarios found"] |
 

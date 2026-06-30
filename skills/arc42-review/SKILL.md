@@ -52,8 +52,8 @@ Apply only for sections included in the review scope.
 
 **Section 1 (Introduction and Goals):**
 - [ ] Section 1.2 quality goals are present as foundational architecture drivers → if absent, the whole document is at risk
-- [ ] 3–5 quality goals maximum → if more, ask the user which to promote and which to demote to Section 10
-- [ ] Every quality goal has a Q42 property tag when following the toolkit convention (`#reliable`, `#efficient`, `#secure`, `#usable`, `#safe`, `#flexible`, `#suitable`, `#operable`) → if missing, suggest the correct tag
+- [ ] Quality goals are intentionally scoped for the document's purpose → if the list is too broad, ask the user which goals are architecture drivers and which belong in Section 10 detail
+- [ ] If Q42 references are used, they link to or name the user's selected current Q42 entries rather than relying on copied catalog text
 - [ ] Every quality goal has a concrete metric or measurable scenario — not "the system should be fast" → flag vague statements
 - [ ] All relevant stakeholders are listed with their expectations → if a stakeholder group appears in other sections but not here, flag the gap
 - [ ] Requirements overview is under 1 page (ESSENTIAL/THOROUGH) → if longer, suggest splitting into summary vs. reference
@@ -85,8 +85,8 @@ Apply only for sections included in the review scope.
 - [ ] When following the toolkit diagram convention, C4 PlantUML diagrams exist as separate `.puml` files in `docs/diagrams/` → if inlined or absent, flag with expected file paths
 
 **Section 6 (Runtime View):**
-- [ ] Scenario set is representative and architecturally relevant. Toolkit default is 3 to 5 scenarios → flag if the set is too thin or too exhaustive
-- [ ] Recommended toolkit mix: at least one happy-path scenario, one error/recovery scenario, and one scenario demonstrating a quality goal → flag missing types as suggestions unless the chosen detail level requires them
+- [ ] Scenario set is representative and architecturally relevant for the document's purpose → flag if the set is too thin, too exhaustive, or unjustified
+- [ ] Scenario mix is justified by architectural relevance → ask whether happy-path, error/recovery, or quality-goal scenarios are missing, but do not treat a fixed mix as official guidance
 - [ ] All components referenced exist in Section 5 — exact name match → list any name mismatches
 - [ ] All external actors referenced exist in Section 3 → list any that don't
 - [ ] Error handling documented for scenarios on the critical path → flag missing error handling
@@ -96,7 +96,7 @@ Apply only for sections included in the review scope.
 - [ ] Every Section 5 building block appears in the software-to-infrastructure mapping → list any missing
 - [ ] Production environment is fully described before other environments → flag if non-production is more detailed than production
 - [ ] TLS termination point is identified → if absent, flag as a security gap
-- [ ] At least one `#reliable`, `#efficient`, or `#operable` goal from Section 1.2 has a corresponding infrastructure mechanism → if none are mapped, flag it
+- [ ] Infrastructure-relevant quality goals from Section 1.2 have corresponding infrastructure mechanisms or a documented reason they are handled elsewhere
 - [ ] No infrastructure choice violates a constraint from Section 2 → flag any conflict
 - [ ] When following the toolkit diagram convention, C4 Deployment PlantUML diagrams exist in `docs/diagrams/deployment-[env].puml` (ESSENTIAL/THOROUGH) → flag if absent or inlined
 
@@ -110,7 +110,7 @@ Apply only for sections included in the review scope.
 **Section 9 (Architecture Decisions):**
 - [ ] Every significant decision flagged in Section 4 has corresponding decision documentation. If using the toolkit default, that means an ADR → list any missing
 - [ ] Every ADR or decision record has context, decision, alternatives when genuinely considered, and consequences (positive AND negative) → flag ADRs with only benefits listed
-- [ ] Toolkit ADR lifecycle rule: no ADR has been edited to change a past decision — superseded decisions must be marked "Superseded by ADR-XXX" with a new ADR created → if an ADR appears to have been overwritten, flag it
+- [ ] If the user adopted the toolkit ADR lifecycle convention, past decisions are preserved and superseded rather than overwritten
 - [ ] Status and date are set on every ADR or decision record → flag any missing
 - [ ] "Risks created" field is populated and each risk appears in Section 11 → flag any gap
 
@@ -150,7 +150,7 @@ Apply when multiple sections are in scope.
 | Component names | Section 5 ↔ Section 7 | Every component in Section 5 appears in Section 7 deployment mapping |
 | Component names | Section 5 ↔ Section 8 | Building blocks referenced in crosscutting concepts match Section 5 names |
 | Quality goals | Section 1.2 ↔ Section 4 | Every quality goal has a solution approach in Section 4 |
-| Quality goals | Section 1.2 ↔ Section 7 | `#reliable`, `#efficient`, `#operable` goals have infrastructure mechanisms in Section 7 |
+| Quality goals | Section 1.2 ↔ Section 7 | Infrastructure-relevant quality goals have mechanisms in Section 7 or a documented reason they are handled elsewhere |
 | Quality goals | Section 1.2 ↔ Section 10 | Every quality goal has at least one scenario in Section 10 |
 | Constraints | Section 2 ↔ Section 5 | No component structure violates a Section 2 constraint |
 | Constraints | Section 2 ↔ Section 7 | No infrastructure choice violates a Section 2 constraint |

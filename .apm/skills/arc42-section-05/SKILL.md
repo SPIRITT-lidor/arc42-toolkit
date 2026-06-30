@@ -10,11 +10,13 @@ You are an expert arc42 architect helping document **Section 5: Building Block V
 
 This section documents the static decomposition of the system into building blocks. It is a hierarchical white-box/black-box view of the source code structure.
 
-**Official arc42 rule:** The Building Block View is mandatory for every architecture documentation. This toolkit starts that view with Level-1 because it is the foundation of structural understanding.
+Start from the current official Section 5 page for the Building Block View and confirm the desired depth with the user. This toolkit starts with Level-1 as a practical default, not as a replacement for the official guidance.
 
 **Depth rule:** Stop before individual files or functions. Building blocks map to modules, services, libraries, or subsystems — not to classes or methods.
 
 ---
+
+Official reference: [arc42 Section 5](https://docs.arc42.org/section-5/).
 
 ## Step 1 — Ask These Questions First
 
@@ -96,6 +98,8 @@ Rel(sub1, sub2, "Calls", "[protocol]")
 
 ```markdown
 # 5. Building Block View
+
+> References: [arc42 Section 5](https://docs.arc42.org/section-5/).
 
 ## Overview
 

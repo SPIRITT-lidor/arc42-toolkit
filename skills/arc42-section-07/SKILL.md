@@ -12,6 +12,8 @@ This section describes the technical infrastructure and how software building bl
 
 ---
 
+Official reference: [arc42 Section 7](https://docs.arc42.org/section-7/).
+
 ## Step 1 — Ask These Questions First
 
 **Do not generate any documentation yet.** Ask all questions below and wait for the answers.
@@ -19,7 +21,7 @@ This section describes the technical infrastructure and how software building bl
 **Context check — ask first:**
 - Does Section 5 exist? If yes, retrieve all building block names and map the deployable or infrastructure-relevant ones to the software-to-infrastructure mapping.
 - Does Section 2 exist? If yes, check for infrastructure-related constraints (e.g. mandated cloud provider, on-premise requirement, data residency rules). The deployment view must not violate these.
-- Does Section 1.2 exist? If yes, retrieve quality goals — `#reliable`, `#efficient`, and `#operable` goals are directly realised through infrastructure choices. Ask how each applies.
+- Does Section 1.2 exist? If yes, retrieve quality goals and any selected Q42 references. Ask which goals are realised through infrastructure choices.
 
 **Then ask:**
 
@@ -43,9 +45,8 @@ This section describes the technical infrastructure and how software building bl
 
 6. **Replication and scaling** — Are any components replicated for availability or performance? Is auto-scaling configured? What are the min/max instance counts?
 
-7. **Quality goal realisation** — For each `#reliable`, `#efficient`, or `#operable` goal from Section 1.2: what specific infrastructure mechanism achieves it?
-   - Example: `#reliable` (99.9% uptime) → active-passive failover across two availability zones, automated health checks with 30s failover
-   - Example: `#efficient` (< 200ms p95) → Redis cache layer, CDN for static assets, auto-scaling on CPU > 70%
+7. **Quality goal realisation** — For each infrastructure-relevant quality goal from Section 1.2: what specific infrastructure mechanism achieves it? Link back to the selected Q42 entry or local quality label if one is used.
+   - Example pattern: [selected quality goal] → [specific infrastructure mechanism] → [measurable verification scenario]
 
 8. **Environment differences** — What changes between environments? Focus on architecturally significant differences (infrastructure tier, data isolation, monitoring depth, scaling).
 
@@ -97,6 +98,8 @@ Rel(compA, broker, "AMQP", "5671")
 ```markdown
 # 7. Deployment View
 
+> References: [arc42 Section 7](https://docs.arc42.org/section-7/) and selected [Q42](https://quality.arc42.org) entries where quality labels are used.
+
 ## Overview
 
 [1–2 paragraphs: What is the target infrastructure? How do the infrastructure choices realise the key quality goals?]
@@ -131,9 +134,8 @@ Rel(compA, broker, "AMQP", "5671")
 
 | Quality Goal (Section 1.2) | Infrastructure Mechanism |
 |--------------------|--------------------------|
-| [#reliable — e.g. 99.9% uptime] | [e.g. 2-AZ deployment, automated failover in < 30s] |
-| [#efficient — e.g. < 200ms p95] | [e.g. Redis cache, CDN for static assets] |
-| [#operable — e.g. deployment < 10 min] | [e.g. rolling deploys, zero-downtime via K8s] |
+| [Selected quality goal or Q42 reference] | [Specific infrastructure mechanism and verification scenario] |
+| [Selected quality goal or Q42 reference] | [Specific infrastructure mechanism and verification scenario] |
 
 ---
 
@@ -168,7 +170,7 @@ After presenting the draft, work through this checklist. For any item that fails
 - [ ] No infrastructure choice violates a constraint from Section 2 → if a conflict exists (e.g. cloud provider used but on-premise mandated), flag it and ask which takes precedence
 
 **Quality goals:**
-- [ ] At least one `#reliable`, `#efficient`, or `#operable` goal from Section 1.2 has a corresponding infrastructure mechanism → if none are mapped, ask how the infrastructure achieves each goal
+- [ ] Infrastructure-relevant quality goals from Section 1.2 have corresponding infrastructure mechanisms or a documented reason they are handled elsewhere
 
 **Network and security:**
 - [ ] TLS termination point is identified

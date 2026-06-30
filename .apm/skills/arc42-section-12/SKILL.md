@@ -16,6 +16,8 @@ This section defines domain-specific and technical terms used throughout the arc
 
 ---
 
+Official reference: [arc42 Section 12](https://docs.arc42.org/section-12/).
+
 ## Step 1 — Ask These Questions First
 
 **Do not generate any documentation yet.** First scan existing sections, then ask the user targeted questions.
@@ -52,6 +54,8 @@ Once all answers are in, produce Section 12. Sort alphabetically within each tab
 
 ```markdown
 # 12. Glossary
+
+> References: [arc42 Section 12](https://docs.arc42.org/section-12/).
 
 ## Overview
 

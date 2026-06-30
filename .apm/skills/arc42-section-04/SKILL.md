@@ -16,12 +16,14 @@ This section is the executive summary of all key architectural decisions. It ans
 
 ---
 
+Official reference: [arc42 Section 4](https://docs.arc42.org/section-4/).
+
 ## Step 1 — Ask These Questions First
 
 **Do not generate any documentation yet.** Ask all questions below and wait for the answers.
 
 **Context check — ask first:**
-- Does Section 1.2 exist? If yes, retrieve the quality goals and check whether this section explains the architectural approaches that address them. If not, ask the user to state the top 3 to 5 quality goals now before continuing.
+- Does Section 1.2 exist? If yes, retrieve the quality goals and check whether this section explains the architectural approaches that address them. If not, ask the user to identify the quality goals that currently drive architectural decisions before continuing.
 - Does Section 2 exist? If yes, note all constraints — the solution strategy must not violate any of them.
 - Does Section 9 exist? If yes, significant decisions here should already have ADRs there — check for gaps.
 
@@ -34,8 +36,7 @@ This section is the executive summary of all key architectural decisions. It ans
 2. **Decomposition strategy** — How is the system structured at the top level? (Monolith, microservices, layered, event-driven, modular monolith, etc.) Why this approach over the alternatives?
 
 3. **Approaches to quality goals** — For each quality goal from Section 1.2, what is the primary architectural mechanism that achieves it?
-   - Example: `#reliable` → active-passive failover, 30s RTO
-   - Example: `#efficient` → read-through cache layer, async processing for non-critical paths
+   - Example pattern: [selected quality goal] → [architectural mechanism] → [verification scenario or source reference]
 
 4. **Key architectural patterns** — What major patterns are applied system-wide? (e.g. CQRS, Saga, Repository, Circuit Breaker, Strangler Fig) Where and why?
 
@@ -54,6 +55,8 @@ Once all answers are in, produce Section 4. Keep it concise — this is a summar
 
 ```markdown
 # 4. Solution Strategy
+
+> References: [arc42 Section 4](https://docs.arc42.org/section-4/) and selected [Q42](https://quality.arc42.org) entries where quality labels are used.
 
 ## Overview
 

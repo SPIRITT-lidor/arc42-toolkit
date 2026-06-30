@@ -10,9 +10,11 @@ You are an expert arc42 architect helping document **Section 1: Introduction and
 
 This section is the entry point to all architecture documentation. It answers: *Why does this system exist? What matters most? Who cares?*
 
-**Critical toolkit rule:** Quality goals (1.2) are foundational at every detail level. Establish them early because official arc42 says quality goals influence fundamental architectural decisions.
+Start from the official Section 1 guidance and use quality goals as architecture drivers. Link the user to the current arc42 page instead of restating detailed official text.
 
 ---
+
+Official reference: [arc42 Section 1](https://docs.arc42.org/section-1/).
 
 ## Step 1 — Ask These Questions First
 
@@ -29,19 +31,11 @@ This section is the entry point to all architecture documentation. It answers: *
 
 3. **Essential features** — What are the 5–10 most important things the system does?
 
-4. **Quality goals** — What are the 3–5 most important quality properties for this system?
+4. **Quality goals** — Which quality properties matter most for this system?
 
-   Use the Q42 properties to guide the conversation:
-   - `#reliable` — availability, fault tolerance, data accuracy
-   - `#flexible` — maintainability, extensibility, portability
-   - `#efficient` — response time, throughput, resource usage
-   - `#usable` — learnability, operability, accessibility
-   - `#safe` — fail-safe behavior, risk minimization
-   - `#secure` — confidentiality, integrity, authentication
-   - `#suitable` — functional completeness, testability
-   - `#operable` — deployability, monitorability, installability
+   Orient with the current Q42 model at https://quality.arc42.org instead of copying its catalog into the skill. Ask the user which current Q42 entries or local quality labels apply, then capture only the selected references.
 
-   For each goal the user names: **if they do not provide a concrete, measurable scenario with specific numbers, ask them to provide one before continuing.** Do not accept "fast", "reliable", or "secure" without a metric.
+   For each goal the user names: if they do not provide a concrete, measurable scenario, ask them to make it testable before continuing. Treat examples as coaching, not official thresholds.
 
    Examples of what to push for:
    - ❌ "The system should be fast" → ✅ "API responds in < 200ms at p95 under 1000 concurrent users"
@@ -64,6 +58,8 @@ Once all answers are concrete and complete, produce Section 1 using the template
 
 ```markdown
 # 1. Introduction and Goals
+
+> References: [arc42 Section 1](https://docs.arc42.org/section-1/) and selected [Q42](https://quality.arc42.org) entries where quality labels are used.
 
 ## 1.1 Requirements Overview
 <!-- LEAN: keep to 5–10 bullet points and one-sentence purpose. ESSENTIAL/THOROUGH: add business context paragraph and references. -->
@@ -88,8 +84,8 @@ Once all answers are concrete and complete, produce Section 1 using the template
 
 ## 1.2 Quality Goals
 
-> Top 3–5 quality requirements of highest importance to major stakeholders.
-> Architectural decisions should be traceable to these goals where relevant.
+> Quality requirements of highest importance to major stakeholders.
+> Link to selected Q42 entries or local quality labels where useful. Architectural decisions should be traceable to these goals where relevant.
 > ⚠️ **Must be reviewed and signed off by the stakeholders named in 1.3 before architecture work begins.**
 
 | Priority | Quality Goal | Concrete Scenario |
@@ -125,8 +121,8 @@ See Section 10 for detailed quality scenarios.
 After presenting the draft, work through this checklist. For any item that fails, tell the user what is wrong and what to do to fix it — do not just flag it silently.
 
 **Quality goals (1.2), foundational:**
-- [ ] 3–5 goals present (3 is ideal; more than 5 is a red flag)
-- [ ] Every goal uses a Q42 property tag when following this toolkit convention
+- [ ] The quality goal set is intentionally scoped and agreed by stakeholders
+- [ ] If the user adopted Q42 labels, every goal links back to the selected current Q42 entry or tag
 - [ ] Every goal has a concrete, measurable scenario with specific numbers — if not, ask the user for the metric now
 - [ ] Goals are ordered by priority
 - [ ] Sign-off responsibility is named → if missing, ask who will approve them

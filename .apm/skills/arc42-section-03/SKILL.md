@@ -16,6 +16,8 @@ This section defines the system boundary — what is inside your system and what
 
 ---
 
+Official reference: [arc42 Section 3](https://docs.arc42.org/section-3/).
+
 ## Step 1 — Ask These Questions First
 
 **Do not generate any documentation yet.** Ask all questions below and wait for the answers.
@@ -83,6 +85,8 @@ Rel(systemC, system, "Sends events to", "[data exchanged]")
 
 ```markdown
 # 3. Context and Scope
+
+> References: [arc42 Section 3](https://docs.arc42.org/section-3/).
 
 ## 3.1 Business Context
 

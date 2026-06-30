@@ -16,13 +16,15 @@ This section captures overarching principles, patterns, and solutions that apply
 
 ---
 
+Official reference: [arc42 Section 8](https://docs.arc42.org/section-8/).
+
 ## Step 1 — Ask These Questions First
 
 **Do not generate any documentation yet.** Ask all questions below and wait for the answers.
 
 **Context check — ask first:**
 - Does Section 5 exist? If yes, retrieve the building block names — they are used in the domain model and to validate that concepts here truly cross multiple components.
-- Does Section 1.2 exist? If yes, retrieve the quality goals — `#secure`, `#reliable`, `#operable`, and `#flexible` goals often materialise as crosscutting concepts. Note which goals still need architectural treatment.
+- Does Section 1.2 exist? If yes, retrieve the quality goals and any selected Q42 references. Note which goals still need architectural treatment as crosscutting concepts.
 - Does Section 4 exist? If yes, retrieve the key architectural patterns — they should connect to what is documented here.
 
 **For each topic below, ask whether it is architecturally significant for this system. Apply the crosscutting test before accepting any answer. Only proceed with topics the user confirms.**
@@ -85,6 +87,8 @@ Customer "1" o-- "0..*" Order
 
 ```markdown
 # 8. Crosscutting Concepts
+
+> References: [arc42 Section 8](https://docs.arc42.org/section-8/) and selected [Q42](https://quality.arc42.org) entries where quality labels are used.
 
 ## Overview
 
@@ -193,7 +197,7 @@ After presenting the draft, work through this checklist. For any item that fails
 - [ ] THOROUGH: domain model is included if entities cross component boundaries
 
 **Quality goal connection:**
-- [ ] `#secure`, `#reliable`, `#operable`, or `#flexible` goals from Section 1.2 that have not been addressed in Sections 4 or 7 are covered here → if a quality goal has no architectural treatment anywhere, flag it
+- [ ] Selected quality goals from Section 1.2 that have not been addressed in Sections 4 or 7 are covered here or explicitly deferred
 
 **Cross-section consistency:**
 - [ ] Entity names in domain model match names used in Section 5 building block descriptions → if they differ, align them
