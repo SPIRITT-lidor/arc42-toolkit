@@ -270,12 +270,15 @@ def extract_sec10_data(content: str, lang: dict) -> tuple[dict[str, str], set[st
     """Extract quality tags and aspirational scenario IDs from Section 10.
 
     quality_tags:  {QS_ID: "#tag"} from Quality property rows
-    aspirational:  QS-xx IDs whose Current State matches a 'not measured' pattern
+    aspirational:  QS-xx IDs whose Current State matches a risk-relevant aspirational pattern
     """
     quality_tags: dict[str, str] = {}
     aspirational: set[str] = set()
     quality_prop_labels = lang["patterns"]["quality_property_label"]
-    not_measured_values = lang["patterns"]["not_measured"]
+    aspirational_values = lang["patterns"].get(
+        "aspirational_current_state",
+        lang["patterns"].get("not_measured", []),
+    )
 
     current_qs: str | None = None
     for line in content.splitlines():
@@ -297,11 +300,11 @@ def extract_sec10_data(content: str, lang: dict) -> tuple[dict[str, str], set[st
             if tag_m:
                 quality_tags[current_qs] = tag_m.group(1)
 
-        # Aspirational row: | QS-xx | description | <not measured> | target | ... |
+        # Aspirational row: | QS-xx | description | <risk-relevant current state> | target | ... |
         asp_row = re.match(r"^\|\s*(QS-\d+)\s*\|([^|]*)\|\s*([^|]+)\|", line)
         if asp_row:
             current_state = asp_row.group(3).strip()
-            if _matches_any(current_state, not_measured_values):
+            if _matches_any(current_state, aspirational_values):
                 aspirational.add(asp_row.group(1))
 
     return quality_tags, aspirational

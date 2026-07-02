@@ -17,8 +17,8 @@ This skill checks that identifiers defined in one section are correctly referenc
 | 1 | Section 3 ↔ Section 5 | Toolkit IF-xx interface IDs defined in Section 3 should appear in Section 5 Level-1, and vice versa |
 | 2 | Section 5 ↔ Section 7 | Toolkit checks whether Section 5 building block names appear in the Section 7 deployment mapping |
 | 3 | Section 1 ↔ Section 10 | Toolkit checks whether Q42 tags used in Section 10 quality scenarios appear in Section 1.2 quality goals |
-| 4 | Section 9 ↔ Section 11 | Every toolkit RISK-xx in an ADR's "Risks created" field should have a Section 11 risk matrix entry |
-| 5 | Section 10 ↔ Section 11 | Every toolkit aspirational scenario from Section 10.3 should be referenced in Section 11 |
+| 4 | Section 9 ↔ Section 11 | Every toolkit RISK-xx in a decision record's "Risks created" field should have a Section 11 risk matrix entry |
+| 5 | Section 10 ↔ Section 11 | Toolkit aspirational scenarios from Section 10.3 with risk-relevant current-state labels should be referenced in Section 11 |
 
 ---
 
@@ -83,9 +83,9 @@ Read the relevant documentation sections. Apply each rule in order. The phrases 
 3. Any RISK-xx mentioned in Section 9 but absent from Section 11 is an error
 
 **Rule 5 — Section 10.3 ↔ Section 11 Aspirational Scenarios**
-1. Read Section 10.3 (aspirational scenarios table): collect every `QS-xx` where Current State is "not measured"
+1. Read Section 10.3 (aspirational scenarios table): collect every `QS-xx` where Current State uses a risk-relevant label from `scripts/languages/<lang>.json`, for example "not measured", "planned", "not implemented", "current limitation", or "postponed"
 2. Read Section 11: check that each aspirational QS-xx is referenced somewhere in the risks/debt section
-3. Any aspirational QS-xx absent from Section 11 is an error
+3. Any collected aspirational QS-xx absent from Section 11 is an error. Planned work that does not create architectural risk or accepted technical debt should avoid those current-state labels or explicitly reference where it is tracked.
 
 ---
 

@@ -19,6 +19,7 @@
     "quality_property_label": ["propriet. di qualit.", "attributo di qualit."],
     "risks_created_label":    ["rischi creati", "rischi generati"],
     "not_measured":           ["non misurato", "non misurata"],
+    "aspirational_current_state": ["non misurato", "non misurata", "pianificato", "pianificata", "target", "obiettivo", "non ancora implementato", "non ancora implementata", "non implementato", "non implementata", "limitazione attuale", "posticipato", "posticipata", "rinviato", "rinviata", "gap aperto"],
     "section5_header_names":  ["nome", "componente", "blocco costruttivo", "elemento"]
   }
 }

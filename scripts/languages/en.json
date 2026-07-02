@@ -19,6 +19,7 @@
     "quality_property_label": ["quality property"],
     "risks_created_label":    ["risks created"],
     "not_measured":           ["not measured"],
+    "aspirational_current_state": ["not measured", "planned", "target", "not implemented", "not implemented yet", "current limitation", "postponed", "deferred", "open gap"],
     "section5_header_names":  ["name", "component", "building block", "element"]
   }
 }

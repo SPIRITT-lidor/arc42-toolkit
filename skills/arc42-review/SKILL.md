@@ -12,6 +12,8 @@ This skill reviews one or more sections of arc42 documentation for accuracy, com
 
 **Toolkit detail-level awareness:** Before flagging anything as incomplete, establish the stated detail level of the section (LEAN / ESSENTIAL / THOROUGH). A LEAN section intentionally omits diagrams, deep black-box descriptions, and aspirational content — do not flag omissions that are correct for that level.
 
+**In-progress architecture guardrail:** arc42 documentation may describe current reality, target architecture, migration state, postponed behavior, and known gaps. Do not invent a custom lifecycle taxonomy unless the document explicitly needs migration tracking. Prefer plain labels such as "Current limitation", "Planned / target behavior", "Not implemented yet", "Fallback", and "Verification".
+
 ---
 
 ## Step 1 — Identify What to Review
@@ -73,7 +75,7 @@ Apply only for sections included in the review scope.
 **Section 4 (Solution Strategy):**
 - [ ] Every quality goal from Section 1.2 has a corresponding approach described here → list any unaddressed goals
 - [ ] Each technology decision has a clear rationale — not just "we use X" but "we use X because Y" → flag decisions without rationale
-- [ ] Significant decisions are flagged for Section 9 decision documentation. If using the toolkit default, that means ADRs. If a major decision is described here without corresponding decision documentation, flag it
+- [ ] Significant decisions are flagged for Section 9 decision documentation. If using the toolkit default, that means ADR-style decision documentation; standalone ADR files are optional unless the project adopted that convention. If a major decision is described here without corresponding decision documentation, flag it
 - [ ] Decomposition strategy is stated and consistent with Section 5 component structure → flag mismatches
 
 **Section 5 (Building Block View):**
@@ -108,11 +110,11 @@ Apply only for sections included in the review scope.
 - [ ] Domain model (if present) uses standard PlantUML class diagram notation, stored as `docs/diagrams/domain-model.puml` → C4 is not appropriate for domain models
 
 **Section 9 (Architecture Decisions):**
-- [ ] Every significant decision flagged in Section 4 has corresponding decision documentation. If using the toolkit default, that means an ADR → list any missing
+- [ ] Every significant decision flagged in Section 4 has corresponding decision documentation. If using the toolkit default, that means ADR-style decision documentation; standalone ADR files are optional unless the project adopted that convention → list any missing
 - [ ] Every ADR or decision record has context, decision, alternatives when genuinely considered, and consequences (positive AND negative) → flag ADRs with only benefits listed
 - [ ] If the user adopted the toolkit ADR lifecycle convention, past decisions are preserved and superseded rather than overwritten
 - [ ] Status and date are set on every ADR or decision record → flag any missing
-- [ ] "Risks created" field is populated and each risk appears in Section 11 → flag any gap
+- [ ] "Risks created" is either populated with risks that appear in Section 11, or explicitly states "None identified" / "No new risks" → flag unresolved or ambiguous risk references
 
 **Section 10 (Quality Requirements):**
 - [ ] Every Section 1.2 quality goal has at least one scenario → list any unaddressed goals
@@ -123,7 +125,7 @@ Apply only for sections included in the review scope.
 
 **Section 11 (Risks and Technical Debt):**
 - [ ] Every "Risks created" entry from Section 9 decision records appears as a RISK-xx entry when using the toolkit convention → list any missing
-- [ ] Every aspirational scenario from Section 10 that is not yet met has a corresponding risk entry → list any missing
+- [ ] Every aspirational scenario from Section 10 that is not yet met and creates architectural risk or accepted technical debt has a corresponding Section 11 entry → list any missing; do not force harmless planned work into the risk register
 - [ ] Risks are ordered Critical → High → Medium → Low → flag if out of order
 - [ ] Priority is consistent with probability × impact — flag any mismatch
 - [ ] No risk is marked "Mitigated" without a concrete mitigation strategy → flag vague or empty mitigations
@@ -154,9 +156,9 @@ Apply when multiple sections are in scope.
 | Quality goals | Section 1.2 ↔ Section 10 | Every quality goal has at least one scenario in Section 10 |
 | Constraints | Section 2 ↔ Section 5 | No component structure violates a Section 2 constraint |
 | Constraints | Section 2 ↔ Section 7 | No infrastructure choice violates a Section 2 constraint |
-| Decisions | Section 4 ↔ Section 9 | Every significant decision in Section 4 has corresponding decision documentation in Section 9. Toolkit default is a full ADR |
+| Decisions | Section 4 ↔ Section 9 | Every significant decision in Section 4 has corresponding decision documentation in Section 9. Toolkit default is ADR-style decision documentation; standalone ADR files are optional unless adopted by the project |
 | Risks | Section 9 ↔ Section 11 | Every toolkit "Risks created" field in Section 9 decision records has a RISK-xx entry in Section 11 |
-| Risks | Section 10 ↔ Section 11 | Toolkit aspirational scenarios in Section 10 have corresponding RISK-xx entries in Section 11 |
+| Risks | Section 10 ↔ Section 11 | Toolkit aspirational scenarios in Section 10 that create architectural risk or accepted technical debt have corresponding Section 11 entries |
 | Crosscutting | Section 8 ↔ Section 4 | Crosscutting patterns are consistent with Section 4 solution strategy |
 | Terminology | Section 12 ↔ all | Preferred terms in Section 12 are used consistently across all sections |
 

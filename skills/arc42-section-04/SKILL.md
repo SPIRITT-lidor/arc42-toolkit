@@ -126,10 +126,10 @@ Flag any Conway's Law mismatches that pose a risk.]
 
 ## Step 2a — Flag Missing ADRs
 
-After generating the draft, scan the technology decisions and patterns and explicitly tell the user which ones are significant enough to need a full ADR in Section 9. Use this threshold: a decision is ADR-worthy if it is hard to reverse, affects multiple components, or has non-obvious trade-offs.
+After generating the draft, scan the technology decisions and patterns and explicitly tell the user which ones are significant enough to need detailed decision documentation in Section 9. Use ADR-style decision records as the toolkit default, while keeping standalone ADR files optional unless the project adopted that convention. Use this threshold: a decision is worth a detailed record if it is hard to reverse, affects multiple components, or has non-obvious trade-offs.
 
 Example output:
-> **ADRs needed in Section 9:**
+> **Decision records needed in Section 9:**
 > - ADR: Choice of PostgreSQL over MongoDB (data model trade-offs, ACID vs. flexibility)
 > - ADR: Microservices over modular monolith (operational complexity vs. team autonomy)
 > - ADR: Azure Service Bus over RabbitMQ (managed service trade-off)

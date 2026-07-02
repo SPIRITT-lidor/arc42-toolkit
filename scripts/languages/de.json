@@ -19,6 +19,7 @@
     "quality_property_label": ["qualit.tseigenschaft", "qualit.tsmerkmal"],
     "risks_created_label":    ["erzeugte risiken", "neue risiken", "risiken.*erstellt"],
     "not_measured":           ["nicht gemessen", "nicht ermittelt"],
+    "aspirational_current_state": ["nicht gemessen", "nicht ermittelt", "geplant", "ziel", "noch nicht implementiert", "nicht implementiert", "aktuelle einschr.nkung", "verschoben", "zur.ckgestellt", "offene l.cke"],
     "section5_header_names":  ["name", "komponente", "baustein", "element"]
   }
 }

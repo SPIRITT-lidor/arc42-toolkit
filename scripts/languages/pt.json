@@ -19,6 +19,7 @@
     "quality_property_label": ["propriedade de qualidade", "atributo de qualidade"],
     "risks_created_label":    ["riscos criados", "riscos gerados"],
     "not_measured":           ["n.o medido", "n.o medida", "sem medi..o"],
+    "aspirational_current_state": ["n.o medido", "n.o medida", "sem medi..o", "planejado", "planejada", "previsto", "prevista", "alvo", "meta", "n.o implementado", "n.o implementada", "ainda n.o implementado", "ainda n.o implementada", "limita..o atual", "adiado", "adiada", "postergado", "postergada", "lacuna aberta"],
     "section5_header_names":  ["nome", "componente", "bloco de constru..o", "elemento"]
   }
 }

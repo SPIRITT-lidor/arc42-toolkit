@@ -48,7 +48,7 @@ arc42 is the proven, open-source template for software architecture documentatio
 apm install MSiccDev/arc42-toolkit --target opencode
 ```
 
-For other APM-supported agents, replace `opencode` with your target runtime. This installs all 14 skills from the `.apm/skills/` package mirror in one command.
+For other APM-supported agents, replace `opencode` with your target runtime. This installs all 14 skills from the canonical `skills/` directory in one command.
 
 **Claude Code**
 
@@ -160,15 +160,12 @@ arc42-toolkit/
 ├── templates/
 │   └── arc42-lint.yml                 # GitHub Actions workflow template (copy to your project)
 │
-├── .apm/
-│   └── skills/                        # APM package mirror for one-command installs
-│
 └── .agents/ -> skills/                # Symlink for agent-discovery compatibility
 ```
 
 Generated documentation goes in your project's `docs/` directory. Architecture diagrams are stored as `.puml` files in `docs/diagrams/`.
 
-When changing skills, run `python scripts/sync-apm-skills.py` to refresh the APM package mirror, and `python scripts/sync-apm-skills.py --check` before submitting changes.
+When changing skills, edit the canonical files under `skills/`; APM installs from that directory directly.
 
 ---
 
@@ -285,7 +282,7 @@ Quality goals from Section 1 are traced through constraints, solution strategy, 
 
 ## Consistency Linting
 
-The arc42 toolkit ships a standalone linter that validates cross-section ID consistency in generated documentation that follows this toolkit's conventions. It catches mismatches that accumulate silently over time, such as interface IDs renamed in one section but not another, ADR risks never registered, or quality scenarios with no matching goal.
+The arc42 toolkit ships a standalone linter that validates cross-section ID consistency in generated documentation that follows this toolkit's conventions. It catches mismatches that accumulate silently over time, such as interface IDs renamed in one section but not another, decision risks never registered, or quality scenarios with no matching goal.
 
 ### What it checks
 
@@ -294,8 +291,10 @@ The arc42 toolkit ships a standalone linter that validates cross-section ID cons
 | 1 | Section 3 ↔ Section 5 | Toolkit `IF-xx` interface IDs match between context and Level-1 building blocks |
 | 2 | Section 5 ↔ Section 7 | Every building block name appears in the deployment mapping |
 | 3 | Section 1 ↔ Section 10 | Every Q42 tag used in quality scenarios is present in Section 1.2 quality goals |
-| 4 | Section 9 ↔ Section 11 | Every toolkit `RISK-xx` in an ADR's "Risks created" field has a Section 11 risk matrix entry |
-| 5 | Section 10 ↔ Section 11 | Every aspirational (not yet met) scenario from Section 10.3 is referenced in Section 11 |
+| 4 | Section 9 ↔ Section 11 | Every toolkit `RISK-xx` in a decision record's "Risks created" field has a Section 11 risk matrix entry |
+| 5 | Section 10 ↔ Section 11 | Every aspirational scenario from Section 10.3 with a risk-relevant current-state label is referenced in Section 11 |
+
+When documenting in-progress architecture, prefer plain arc42-compatible labels such as "Current limitation", "Planned / target behavior", "Not implemented yet", "Fallback", and "Verification". Avoid adding a custom lifecycle taxonomy unless the documentation explicitly needs migration tracking.
 
 ### Run locally
 

@@ -74,7 +74,7 @@ Decisions that do NOT need detailed decision records: implementation details, ob
 
 ## Step 2 — Generate the Documentation
 
-Once all decisions and their details are collected, produce Section 9. Generate one ADR per decision when using the toolkit default format. Use the detail level to guide depth. Keep the decision log table in sync with all ADRs generated.
+Once all decisions and their details are collected, produce Section 9. Generate one ADR-style decision record per decision when using the toolkit default format; standalone ADR files are optional unless the project adopted that convention. Use the detail level to guide depth. Keep the decision log table in sync with all decision records generated.
 
 ```markdown
 # 9. Architecture Decisions
@@ -134,7 +134,7 @@ Negative:
 - Building blocks affected (→ Section 5): [Which components]
 - Quality goals supported (→ Section 1.2): [Which goals and how]
 - Constraints created (→ Section 2): [Any new constraints this decision introduces]
-- Risks created (→ Section 11): [Any risks or technical debt this decision introduces]
+- Risks created (→ Section 11): [Any risks or technical debt this decision introduces, or "None identified" / "No new risks"]
 
 <!-- THOROUGH only: -->
 **Validation:**
@@ -163,7 +163,7 @@ After presenting the draft, work through this checklist. For any item that fails
 - [ ] Alternatives are documented with concrete rejection reasons (ESSENTIAL/THOROUGH) when alternatives were genuinely considered. Do not invent alternatives just to fill the template
 - [ ] Consequences include BOTH positive and negative → if only benefits are listed, ask the user what trade-offs were accepted
 - [ ] Status and date are set on every ADR → if missing, ask for them
-- [ ] Risks created by the decision are connected to Section 11 → if Section 11 exists, verify the risk appears there
+- [ ] Risks created by the decision are connected to Section 11 → if Section 11 exists, verify each listed risk appears there; "None identified" / "No new risks" is acceptable when justified
 
 **Decision log:**
 - [ ] Decision log table is complete and matches all ADRs in the document

@@ -30,7 +30,7 @@ Official reference: [arc42 Section 11](https://docs.arc42.org/section-11/).
 
 **Context check — ask first:**
 - Does Section 9 exist? If yes, scan every ADR or decision record's "Risks created" field when using the toolkit convention — those are pre-identified risks that belong here. List them for the user and ask which should be formalised as RISK-xx entries when using the toolkit convention.
-- Does Section 10 exist? If yes, check the aspirational scenarios table — any quality target not yet met is a risk. List candidates and ask the user to confirm.
+- Does Section 10 exist? If yes, check the aspirational scenarios table — quality targets not yet met are risk candidates, not automatically formal risks. List candidates and ask the user which create architectural risk or accepted technical debt.
 - Does Section 2 exist? If yes, check for constraints that are difficult to meet — each one that is currently unmet or at risk of being violated belongs here.
 - Does Section 5 exist? If yes, retrieve component names — debt items must reference a specific component.
 
@@ -148,7 +148,7 @@ After presenting the draft, work through this checklist. For any item that fails
 
 **Completeness:**
 - [ ] Every "Risks created" entry from Section 9 decision records appears here as a RISK-xx when using the toolkit convention → if any are missing, ask whether they were intentionally excluded or overlooked
-- [ ] Every aspirational scenario from Section 10 that is not yet met has a corresponding risk → if missing, ask the user to confirm whether it is tracked elsewhere
+- [ ] Every aspirational scenario from Section 10 that is not yet met and creates architectural risk or accepted technical debt has a corresponding risk or debt entry → if missing, ask the user whether it is intentionally harmless planned work or tracked elsewhere
 - [ ] No risk is marked "Mitigated" without a concrete mitigation strategy described → if the mitigation field is vague or empty, ask what was actually done
 
 **Priority and ordering:**

@@ -19,6 +19,7 @@
     "quality_property_label": ["propri.t. de qualit.", "attribut de qualit."],
     "risks_created_label":    ["risques cr..s", "risques g.n.r.s"],
     "not_measured":           ["non mesur.e?", "pas mesur.e?"],
+    "aspirational_current_state": ["non mesur.e?", "pas mesur.e?", "planifi.", "pr.vu", "cible", "pas encore impl.ment.", "non impl.ment.", "limitation actuelle", "report.", "diff.r.", ".cart ouvert"],
     "section5_header_names":  ["nom", "composant", "bloc de construction", ".l.ment"]
   }
 }
